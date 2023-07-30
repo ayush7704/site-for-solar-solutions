@@ -197,7 +197,7 @@ nav h2 {
     text-wrap: nowrap;
 }
 
-.bookmarks a {
+.bookmarks a ,.bookmarks p{
     padding: 10px;
     color: white;
     transition: 0.3s linear;
@@ -879,6 +879,11 @@ footer h4 {
     .close {
         display: block;
         color: white;
+    }
+    .developerContact{
+        position: absolute;
+        bottom: 20%;
+        display: block;
     }
 
     nav .click {
