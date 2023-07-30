@@ -747,7 +747,7 @@
             opacity: 0,
             ease: 'power1',
             duration: 0.5,
-            stagger: 0.5,
+            // stagger: 1,
             start: 'end',
             scrollTrigger: {
                 trigger: '.swiper-slide',
@@ -761,18 +761,19 @@
             width: '70%',
             ease: 'power1',
             scrollTrigger: {
-                trigger: '.mySwiper2',
+                trigger: '#pastProjects',
                 scroller: 'body',
                 start: 'top 110%',
                 end: 'top 20%',
                 scrub: true,
+                // pin:true
                 // markers: true
             }
         })
         gsap.from('.-box', {
             opacity: 0,
             ease: 'power1',
-            // duration: 0.4,
+            duration: 0.4,
             stagger: 0.3,
             scrollTrigger: {
                 trigger: '.-box',

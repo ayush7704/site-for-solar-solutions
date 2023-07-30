@@ -424,7 +424,7 @@ main .home {
 }
 
 .whyTIIem {
-    flex: 1 1 350px;
+    flex: 1 1 370px;
 }
 
 .white {
@@ -434,6 +434,7 @@ main .home {
 
 .whysTextImg .whyTIIem:first-child {
     font-size: 1.2rem;
+    min-height: 180px!important;
     padding: 10px 20px 0;
 }
 
@@ -852,6 +853,7 @@ footer h4 {
     .bookmarks .close {
         display: none;
     }
+    
 }
 
 @media screen and (max-width:850px) {
@@ -903,6 +905,9 @@ footer h4 {
     .whygoSolar {
         padding: 10px;
     }
+    .whysTextImg .whyTIIem:first-child {
+        min-height: 240px!important;
+    }
 }
 
 @media screen and (max-width:700px) {
@@ -927,6 +932,9 @@ footer h4 {
     .swiper-button-next::after,
     .swiper-button-prev::after {
         display: none;
+    }
+    .whysTextImg .whyTIIem:first-child {
+        min-height: 250px!important;
     }
 }
 
