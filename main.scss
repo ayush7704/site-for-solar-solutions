@@ -47,6 +47,10 @@ a {
     display: block;
 }
 
+.d-inblock {
+    display: inline-block;
+}
+
 .v-hidden {
     visibility: hidden;
 }
@@ -124,11 +128,13 @@ a {
 .mx-20 {
     margin: 0 20px;
 }
-input{
+
+input {
     scale: 0.6;
-    
+
 }
-.input-scale1{
+
+.input-scale1 {
     scale: 1;
 }
 
@@ -197,7 +203,8 @@ nav h2 {
     text-wrap: nowrap;
 }
 
-.bookmarks a ,.bookmarks p{
+.bookmarks a,
+.bookmarks p {
     padding: 10px;
     color: white;
     transition: 0.3s linear;
@@ -434,7 +441,7 @@ main .home {
 
 .whysTextImg .whyTIIem:first-child {
     font-size: 1.2rem;
-    min-height: 180px!important;
+    min-height: 180px !important;
     padding: 10px 20px 0;
 }
 
@@ -575,9 +582,11 @@ main .home {
     width: 100%;
     margin: auto;
 }
- .scale{
+
+.scale {
     font-size: 1.3rem;
- }
+}
+
 .swpr .c>p {
     height: 1px;
     background-color: white;
@@ -619,6 +628,7 @@ main .home {
 
 .swiper-slide2 {
     padding: 0;
+    align-content: stretch;
 }
 
 .swiper-slide2 .dg-300 {
@@ -662,7 +672,7 @@ main .home {
 .swiper-slide2 .reviewer .city {
     color: gray;
     padding: 0 0.6rem;
-
+    font-size: 1.1rem;
 }
 
 .swiper-slide2 .reviewer .star {
@@ -697,9 +707,10 @@ main .home {
 }
 
 //=========== contactUs
-.contactus > p{
+.contactus>p {
     font-size: 1.2rem;
 }
+
 .contactus:nth-child(2) .dg-300 {
     gap: 1rem;
 }
@@ -841,11 +852,16 @@ footer h4 {
     nav {
         min-width: 90%;
     }
+
     .contactImgCon {
         padding: 55px;
     }
-    
+
+    .swiper-slide2 .dg-300 img {
+        height: 100%;
+    }
 }
+
 
 @media screen and (min-width:850px) {
 
@@ -853,7 +869,7 @@ footer h4 {
     .bookmarks .close {
         display: none;
     }
-    
+
 }
 
 @media screen and (max-width:850px) {
@@ -880,7 +896,8 @@ footer h4 {
         display: block;
         color: white;
     }
-    .developerContact{
+
+    .developerContact {
         position: absolute;
         bottom: 20%;
         display: block;
@@ -889,9 +906,10 @@ footer h4 {
     nav .click {
         display: block;
     }
+
     .contactImgCon {
         padding: 40px;
-    }    
+    }
 }
 
 @media screen and (min-width:701px) {
@@ -910,8 +928,9 @@ footer h4 {
     .whygoSolar {
         padding: 10px;
     }
+
     .whysTextImg .whyTIIem:first-child {
-        min-height: 240px!important;
+        min-height: 240px !important;
     }
 }
 
@@ -938,8 +957,19 @@ footer h4 {
     .swiper-button-prev::after {
         display: none;
     }
+
     .whysTextImg .whyTIIem:first-child {
-        min-height: 250px!important;
+        min-height: 250px !important;
+    }
+}
+
+@media screen and (max-width:650px) {
+    .swiper-slide2 .dg-300 img {
+        height: 300px;
+    }
+    .swiper-slide2 .dg-300{
+        align-items: flex-start;
+        align-content: start;
     }
 }
 
@@ -967,8 +997,9 @@ footer h4 {
         font-size: 1.5rem;
         padding: 10px 20px 0;
     }
+
     .contactImgCon {
         padding: 20px;
     }
-    
+
 }
