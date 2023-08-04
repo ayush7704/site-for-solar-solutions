@@ -683,45 +683,44 @@
         })
 
         //===== gsap little animation 
-        var tm = gsap.timeline()
-        // let load = () => {
-        //     window.addEventListener("load", ()=>{});
-        // }
-        tm.to('.loadcontainer', {
-            onStart: () => {
-                window.addEventListener("load", () => {
-                    tm.to('.loadcontainer', {
-                        top: '-120%',
-                        duration: 0.4,
-                        ease: Power4,
-                    })
+        window.addEventListener('load', () => {
+            console.log('page fully loaded')
+            var tm = gsap.timeline()
+            tm.to('.loadcontainer', {
+                top: '-120%',
+                duration: 0.5,
+                opacity: 0,
+                ease: Power4,
+            }).from('nav', {
+                opacity: 0,
+                duration: 0.3,
+            }).from('.logo-name img,.logo-name h2,.click', {
+                ease: 'bounce',
+                y: -50,
+                duration: 1,
+                opacity: 0.5,
+                stagger: 0.5,
+                onComplete: () => {
+                    if (document.body.offsetWidth > '850') {
+                        gsap.from('.bookmark', {
+                            y: -50,
+                            duration: 1,
+                            // stagger:0.3,
+                            opacity: 0,
+                        })
+                        console.log('badhai')
+                    }
+                }
+            }).from(".imgs", {
+                    x: '-100%',
+                    delay: 0,
+                    ease: 'power4',
+                    duration: 0.2,
+                    repeat: -1,
+                    repeatDelay: 3,
+                    stagger: 4
                 })
-            }
         })
-        tm.from(document.all, {
-            opacity: 0,
-            duration: 0.4,
-        })
-
-        tm.from('.logo-name img,.logo-name h2,.click', {
-            ease: 'bounce',
-            y: -50,
-            duration: 1,
-            opacity: 0.5,
-            stagger: 0.5
-        })
-
-        tm.from(".imgs", {
-            x: '-100%',
-            delay: 0,
-            ease: 'power4',
-            duration: 0.2,
-            repeat: -1,
-            repeatDelay: 3,
-            stagger: 4
-        })
-
-
         // ======= gsap scrolltrigger 
         gsap.from('.white', {
             scale: 0.3,
