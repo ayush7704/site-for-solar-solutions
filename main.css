@@ -152,7 +152,7 @@ input {
   border: 4px solid white;
   border-top: 4px solid black;
   transition: all 1s linear;
-  animation: load 0.5s ease-in-out infinite;
+  animation: load 0.5s linear infinite;
 }
 
 @keyframes load {
@@ -160,6 +160,27 @@ input {
     transform: rotate(360deg);
   }
 }
+.top-div {
+  padding: 0.7rem 5%;
+  gap: 0.8rem;
+  text-align: center;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socials a {
+  padding: 0 10px;
+}
+
+.socials img {
+  width: 32px;
+  height: 32px;
+}
+
 /*==========  navbar  ========*/
 nav {
   position: sticky;
@@ -190,6 +211,7 @@ nav .logo-name img {
   z-index: -2;
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
+  opacity: 0;
 }
 
 .myphotocontainer {
@@ -711,6 +733,10 @@ main .home {
   font-size: 1.2rem;
 }
 
+.map iframe {
+  width: var(--main-width, 400px);
+}
+
 .contactus:nth-child(2) .dg-300 {
   gap: 1rem;
 }
@@ -912,6 +938,9 @@ footer h4 {
   nav {
     min-width: 100%;
   }
+  .C-name {
+    order: 1;
+  }
   .imgs img {
     min-width: 100%;
   }
@@ -926,7 +955,7 @@ footer h4 {
     display: none;
   }
   .whysTextImg .whyTIIem:first-child {
-    min-height: 250px !important;
+    min-height: 270px !important;
   }
 }
 @media screen and (max-width: 650px) {
@@ -948,6 +977,9 @@ footer h4 {
   }
   .imgs img {
     max-width: 100%;
+  }
+  .whysTextImg .whyTIIem:first-child {
+    min-height: 330px !important;
   }
   .aboutdivs h3 {
     font-size: 1.4rem;
