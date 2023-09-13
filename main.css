@@ -151,8 +151,9 @@ input {
   border-radius: 50%;
   border: 4px solid white;
   border-top: 4px solid black;
+  border-bottom: 4px solid black;
   transition: all 1s linear;
-  animation: load 0.5s linear infinite;
+  animation: load 0.7s linear infinite;
 }
 
 @keyframes load {
@@ -996,5 +997,10 @@ footer h4 {
   .myphoto img {
     width: var(--myphoto, 300px);
     height: var(--myphoto, 300px);
+  }
+}
+@media screen and (max-width: 390px) {
+  .whysTextImg .whyTIIem:first-child {
+    min-height: 370px !important;
   }
 }/*# sourceMappingURL=main.css.map */
