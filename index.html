@@ -149,7 +149,8 @@
         <!--================ about us  ==================-->
         <section id="aboutus">
             <h3 class="text-center"><span class="headings animation">ABOUT US</span></h3>
-            <p class="p lineH-1-8rem">Sunshine Solar Solutions is an ISO 9001:2015 certified empaneled startup in ministry of
+            <p class="p lineH-1-8rem">Sunshine Solar Solutions is an ISO 9001:2015 certified empaneled startup in
+                ministry of
                 Micro, Small and
                 Medium enterprices
                 under market mode. With office in Bhopal and execution of over <span class="count">0</span>projects
@@ -531,9 +532,9 @@
                 </p>
                 <div class="d-JA-WRAP-flex">
                     <div class="-box text-center">
-                        <img src="customer-service (1).png" alt="calllogo" class="number"  onclick="numbercopy('owner')">
+                        <img src="customer-service (1).png" alt="calllogo" class="number" onclick="numbercopy('owner')">
                         <h3 class="number" onclick="numbercopy('owner')">Call Us At</h3>
-                        <p class="number"  onclick="numbercopy('owner')">9399503463</p>
+                        <p class="number" onclick="numbercopy('owner')">9399503463</p>
                     </div>
                     <div class="-box text-center">
                         <a href="sunshinesolarsolutions3s@gmail.com">
@@ -843,7 +844,7 @@
                 scrub: 2,
             }
         })
-       
+
 
         //========= moving btn 
         gsap.to('.Conbtn,.contactImgCon img', {
@@ -943,8 +944,8 @@
                     document.documentElement.style.setProperty('--min-width', '300px')
                 }
                 if (document.body.offsetWidth <= '450') {
-                document.documentElement.style.setProperty('--main-width', document.body.offsetWidth - 10 + 'px')
-            }
+                    document.documentElement.style.setProperty('--main-width', document.body.offsetWidth - 10 + 'px')
+                }
             })
         })
 
@@ -1060,29 +1061,29 @@
             }
         }
 
-  
-        function numbercopy(event){
-         if(event == 'ayush'){
-            navigator.clipboard.writeText(9754742477)
+
+        function numbercopy(event) {
+            if (event == 'ayush') {
+                navigator.clipboard.writeText(9754742477)
                 setTimeout(() => {
                     document.querySelector('.copytext').style.display = 'block'
                 }, 100)
                 setTimeout(() => {
                     document.querySelector('.copytext').style.display = 'none'
                 }, 1000)
-         }
-         else if(event == 'owner'){
-            navigator.clipboard.writeText(9399503463)
+            }
+            else if (event == 'owner') {
+                navigator.clipboard.writeText(9399503463)
                 setTimeout(() => {
                     document.querySelector('.copytext').style.display = 'block'
                 }, 100)
                 setTimeout(() => {
                     document.querySelector('.copytext').style.display = 'none'
                 }, 1000)
-            console.log('owner')
-         }else{
-             console.log('nothing')            
-         }
+                console.log('owner')
+            } else {
+                console.log('nothing')
+            }
         }
 
         document.querySelector('.profile').addEventListener('click', () => {
@@ -1090,6 +1091,9 @@
                 zIndex: 100,
                 duration: 0.5,
                 opacity: 1
+            })
+            document.querySelector('.myphoto').addEventListener('click', () => {
+                document.querySelector('.myphoto').style.cssText = 'z-index:-2'
             })
         })
         document.querySelector('.remove').addEventListener('click', () => {
