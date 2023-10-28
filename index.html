@@ -69,7 +69,14 @@
         <div class="click"><span></span></div>
     </nav>
     <div class="loadcontainer">
-        <div class="loader"></div>
+        <!-- <div class="loader"></div> -->
+        <div class="spinner">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </div>
     <!--==============  main container  ===============-->
     <main>
@@ -1041,6 +1048,7 @@
                 inputs[1].value.length < 10 ? inputs[1].style.cssText = '' : inputs[1].style.cssText = style
             })
         })
+
         //====== little form validation
         function formcheck(a) {
             const errors = document.querySelectorAll('.number-validation')
@@ -1062,6 +1070,7 @@
         }
 
 
+        // number copy 
         function numbercopy(event) {
             if (event == 'ayush') {
                 navigator.clipboard.writeText(9754742477)
@@ -1086,6 +1095,7 @@
             }
         }
 
+        // profile photo open 
         document.querySelector('.profile').addEventListener('click', () => {
             gsap.to('.myphoto', {
                 zIndex: 100,
@@ -1099,6 +1109,8 @@
         document.querySelector('.remove').addEventListener('click', () => {
             document.querySelector('.myphoto').style.cssText = 'z-index:-2'
         })
+
+        
     </script>
 </body>
 
