@@ -592,14 +592,15 @@ main .home {
 #aboutus .Conbtn {
     padding: 10px 30px;
     border-radius: 8px;
-    background-color: #7780ad;
+    background-color: #4e4c553d;
     color: white;
     font-weight: 700;
     margin: auto;
     display: inline-block;
-    border: none;
-    box-shadow: 0 0 6px 1px white;
+    border: 0.1px solid #ffffffba;
+    box-shadow: 2px 3px 3px 0px #141010b8;
 }
+
 
 .align-s-S {
     align-self: stretch;
@@ -635,12 +636,14 @@ main .home {
 
 .aboutus:nth-child(2) {
     position: relative;
+    display: grid;
 }
 
 .about .visioncontainer {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    position: relative;
+    overflow:hidden;
+    // scroll-snap-type: x mandatory;
 }
 
 .aboutus .aboutdivs {
@@ -651,6 +654,32 @@ main .home {
     align-items: center;
     justify-content: space-evenly;
     position: relative;
+    transition: 0.3s transform linear;
+}
+
+.goupcontainer {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    cursor: pointer;
+}
+
+.goupcontainer img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: 0.2s background-color linear;
+}
+.goupcontainer img:active {
+    background-color:  #00bcd470;
+}
+.goupcontainer:first-of-type {
+    left: 4%;
+}
+
+.goupcontainer:last-of-type {
+    right: 4%;
 }
 
 .swipe {
@@ -741,7 +770,7 @@ main .home {
 }
 
 .swiper-slide2 .review {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     text-align: left;
     position: relative;
 }
@@ -853,7 +882,7 @@ textarea {
     padding: 10px;
     border: 1px solid gainsboro;
     outline: none;
-    transition: all 0.5s linear;
+    transition: all 0.3s linear;
     font-size: 14px;
     font-weight: 600;
 }
@@ -870,9 +899,8 @@ input[type='number']::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
-
 :is(input, textarea):hover {
-    box-shadow: 0 0 5px 2px rgb(34 114 197)
+    box-shadow: 1px 4px 5px 2px rgb(0 0 0)
 }
 
 .error {
