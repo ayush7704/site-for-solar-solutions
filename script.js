@@ -205,6 +205,14 @@
   })
 
   //======== scaling p 
+  gsap.utils.toArray('.writing').forEach(element => {
+    ScrollTrigger.create({
+        trigger:element,
+        toggleClass:'writingon',
+        toggleAction:'play play play play'
+        // start:'center center'
+    })
+  });
   gsap.from('.scale', {
       scale: 0.6,
       scrollTrigger: {
@@ -386,7 +394,7 @@
               E.classList.contains('d-none') ? '' : E.classList.add('d-none')
           })
           const inputs = document.querySelectorAll('.input-number');
-          const style = "border: 1px solid green; box-shadow: 0 0 5px 2px #6eff00a6"
+          const style = "border: 1px solid #6eff00a6;"
           inputs[0].value.length < 10 ? inputs[0].style.cssText = '' : inputs[0].style.cssText = style
           inputs[1].value.length < 10 ? inputs[1].style.cssText = '' : inputs[1].style.cssText = style
       })

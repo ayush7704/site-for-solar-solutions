@@ -11,6 +11,7 @@
 body,
 html {
     width: 100%;
+    min-height: 100dvh;
     scroll-behavior: smooth;
     scroll-padding-top: var(--navheight, 53px);
     background: linear-gradient(to right, #7780ad, #000000);
@@ -129,14 +130,7 @@ a {
     margin: 0 20px;
 }
 
-input {
-    scale: 0.6;
 
-}
-
-.input-scale1 {
-    scale: 1;
-}
 
 //==========  loader  ===========>
 .loadcontainer {
@@ -244,6 +238,19 @@ input {
 .socials img {
     width: 32px;
     height: 32px;
+}
+
+.writing {
+    background-image: linear-gradient(gold, gold);
+    background-clip: text;
+    color: transparent;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition: background-size 1.5s linear;
+}
+
+.writingon {
+    background-size: 100% 100%;
 }
 
 /*==========  navbar  ========*/
@@ -642,7 +649,7 @@ main .home {
 .about .visioncontainer {
     display: flex;
     position: relative;
-    overflow:hidden;
+    overflow: hidden;
     // scroll-snap-type: x mandatory;
 }
 
@@ -671,9 +678,11 @@ main .home {
     border-radius: 50%;
     transition: 0.2s background-color linear;
 }
+
 .goupcontainer img:active {
-    background-color:  #00bcd470;
+    background-color: #00bcd470;
 }
+
 .goupcontainer:first-of-type {
     left: 4%;
 }
@@ -900,7 +909,13 @@ input[type='number']::-webkit-inner-spin-button {
 }
 
 :is(input, textarea):hover {
-    box-shadow: 1px 4px 5px 2px rgb(0 0 0)
+    box-shadow: 1px 2px 5px 2px rgb(0, 0, 0)
+}
+
+:is(input, textarea)::placeholder {
+    color: transparent;
+    background-image: linear-gradient(90deg, #7780ad -9%, #000000 20%);
+    background-clip: text;
 }
 
 .error {
@@ -916,8 +931,8 @@ input:empty:not(input[type='submit']) {
 }
 
 input:valid:not(input[type='number'], input[type='submit']) {
-    border: 1px solid green;
-    box-shadow: 0 0 5px 2px #6eff00a6;
+    border: 1px solid #6eff00a6;
+    // box-shadow: 0 0 5px 2px #6eff00a6;
 }
 
 textarea {
@@ -1153,4 +1168,4 @@ footer h4 {
     .whysTextImg .whyTIIem:first-child {
         min-height: 370px !important;
     }
-}
+} 
