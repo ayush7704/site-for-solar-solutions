@@ -7,18 +7,21 @@
 body,
 html {
   width: 100%;
-  min-height: 100dvh;
+  min-height: 100vh;
   scroll-behavior: smooth;
   scroll-padding-top: var(--navheight, 53px);
   background: linear-gradient(to right, #7780ad, #000000);
   color: white;
   font-family: "Alegreya Sans SC", sans-serif;
+  font-size: 16px;
   /* background: linear-gradient(to right, hsl(154deg 100% 76% / 18%) 0%, hsl(234deg 100% 83% / 22%) 50%, hsl(288deg 100% 81% / 28%) 100%); */
+  font-family: "Signika Negative", serif;
+  font-weight: lighter;
 }
 
 /*========== important classes ============== */
 .animation {
-  transform: translateY(100px);
+  transform: translateY(6.25rem);
   opacity: 0;
   transition: all 0.5s linear;
 }
@@ -81,19 +84,19 @@ a {
   display: grid;
   align-items: center;
   gap: 2.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(var(--min-width, 300px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(var(--min-width, 18.75rem), 1fr));
 }
 
 .fitImg {
   width: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .a-r-54 {
   aspect-ratio: 5/4;
   display: block;
-  max-width: 250px;
+  max-width: 15.625rem;
   margin: auto;
 }
 
@@ -106,7 +109,7 @@ a {
 }
 
 .fs-1-2rem {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .lineH-1-8rem {
@@ -119,12 +122,12 @@ a {
 }
 
 .gold {
-  font-weight: 600;
+  font-weight: 400;
   color: gold;
 }
 
 .mx-20 {
-  margin: 0 20px;
+  margin: 0 1.5625rem;
 }
 
 .loadcontainer {
@@ -140,8 +143,8 @@ a {
 
 .spinner {
   position: relative;
-  width: 33.6px;
-  height: 33.6px;
+  width: 2.1rem;
+  height: 2.1rem;
   perspective: 67.2px;
 }
 
@@ -152,7 +155,7 @@ a {
   position: absolute;
   left: 50%;
   transform-origin: left;
-  animation: spinner-16s03x 2s infinite;
+  animation: spinner-16s 2s infinite;
 }
 
 .spinner div:nth-child(1) {
@@ -175,7 +178,7 @@ a {
   animation-delay: 0.75s;
 }
 
-@keyframes spinner-16s03x {
+@keyframes spinner-16s {
   0% {
     transform: rotateY(0deg);
   }
@@ -193,6 +196,13 @@ a {
   text-align: center;
 }
 
+.C-name {
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
+}
+
 .socials {
   display: flex;
   align-items: center;
@@ -200,18 +210,18 @@ a {
 }
 
 .socials a {
-  padding: 0 10px;
+  padding: 0 0.625rem;
 }
 
 .socials img {
-  width: 32px;
-  height: 32px;
+  width: 2rem;
+  height: 2rem;
 }
 
 .writing {
   background-image: linear-gradient(gold, gold);
   -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
   color: transparent;
   background-repeat: no-repeat;
   background-size: 0% 100%;
@@ -231,17 +241,17 @@ nav {
   margin: auto;
   padding: 0.5rem 5%;
   -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
   z-index: 3;
-  box-shadow: 0 0 20px rgba(19, 28, 162, 0.1);
+  box-shadow: 0 0 1.5625rem rgba(19, 28, 162, 0.1);
   background: linear-gradient(132deg, #7780ad -13%, #000000, black);
   color: white;
 }
 
 /*============= .logo and company name ============= */
 nav .logo-name img {
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -251,7 +261,7 @@ nav .logo-name img {
   inset: 0;
   z-index: -2;
   -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
   opacity: 0;
 }
 
@@ -260,11 +270,11 @@ nav .logo-name img {
 }
 
 .myphoto img {
-  width: var(--myphoto, 400px);
-  height: var(--myphoto, 400px);
+  width: var(--myphoto, 25rem);
+  height: var(--myphoto, 25rem);
   border-radius: 50%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .myphoto .remove {
@@ -281,11 +291,13 @@ nav h2 {
 
 .bookmarks a,
 .bookmarks p {
-  padding: 10px;
+  padding: 0.625rem;
   color: white;
   transition: 0.3s linear;
-  font-weight: 700;
+  font-weight: 400;
+  letter-spacing: 0.4px;
   position: relative;
+  font-size: 0.95rem;
 }
 
 .bookmark {
@@ -312,7 +324,7 @@ nav h2 {
 
 .bookmarks .close {
   position: absolute;
-  padding: 13px;
+  padding: 0.8125rem;
   top: 1%;
   right: 0px;
   z-index: 3;
@@ -326,7 +338,7 @@ nav h2 {
   position: absolute;
   height: 1px;
   right: 8%;
-  width: 25px;
+  width: 1.5625rem;
   background-color: white;
 }
 
@@ -340,7 +352,7 @@ nav h2 {
 
 /*=============  hamburgue  =============*/
 .click {
-  padding: 13px;
+  padding: 0.8125rem;
 }
 
 .click span {
@@ -351,7 +363,7 @@ nav h2 {
 .click span,
 .click span::before,
 .click span::after {
-  width: 25px;
+  width: 1.5625rem;
   height: 1px;
   background-color: white;
 }
@@ -363,12 +375,12 @@ nav h2 {
 }
 
 .click span::before {
-  top: var(--before, -8px);
+  top: var(--before, -0.5rem);
   transform: rotate(var(--rotateb, 0));
 }
 
 .click span::after {
-  bottom: var(--after, -8px);
+  bottom: var(--after, -0.5rem);
   transform: rotate(var(--rotatea, 0));
 }
 
@@ -400,6 +412,7 @@ main .home {
 }
 
 .imgs h3 {
+  letter-spacing: 0.3px;
   position: absolute;
   bottom: 0px;
   left: 50%;
@@ -408,17 +421,18 @@ main .home {
   display: block;
   text-align: center;
   color: white;
-  font-size: 1.5rem;
-  padding: 0 35px;
-  word-spacing: 4px;
+  font-size: 1.4rem;
+  padding: 0 2.1875rem;
+  word-spacing: 0.25rem;
   z-index: 1;
+  font-weight: 500;
 }
 
 .imgs img {
   height: 100%;
   position: relative;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .imgs::after {
@@ -433,9 +447,9 @@ main .home {
 
 /*==================  why to use solar section   ====================*/
 .headings {
-  font-weight: bold;
+  font-weight: 600;
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   position: relative;
 }
 
@@ -491,31 +505,31 @@ main .home {
 #services,
 #pastProjects,
 #contactUs {
-  padding: 30px 10px;
+  padding: 1.875rem 0.625rem;
 }
 
 .whyTIIem {
-  flex: 1 1 370px;
+  flex: 1 1 23.125rem;
 }
 
 .white {
   background-color: white;
-  /* border-radius: 15px; */
+  /* border-radius: 0.9375rem ; */
 }
 
 .whysTextImg .whyTIIem:first-child {
   font-size: 1.2rem;
-  min-height: 180px !important;
-  padding: 10px 20px 0;
+  min-height: 11.25rem !important;
+  padding: 0.625rem 1.5625rem 0;
 }
 
 .whygo {
-  flex: 0.5 1 250px;
+  flex: 0.5 1 15.625rem;
   text-align: center;
-  box-shadow: 0 8px 12px 2px rgba(128, 128, 128, 0.7019607843);
+  box-shadow: 0 0.5rem 0.75rem 2px rgba(128, 128, 128, 0.7019607843);
   display: grid;
   align-self: normal;
-  border-radius: 20px;
+  border-radius: 1.5625rem;
   background-color: white;
   color: black;
   overflow: hidden;
@@ -528,40 +542,48 @@ main .home {
 }
 
 .whygoitem {
-  padding: 15px 15px 30px;
+  padding: 0.9375rem 0.9375rem 1.875rem;
 }
 
 .whygo h4 {
-  padding: 10px 10px 0;
-  font-size: 1.4rem;
+  padding: 0.625rem 0.625rem 0;
+  font-size: 1.3rem;
   text-transform: uppercase;
   color: darkslateblue;
 }
 
-/*================== about us  ====================*/
-.type {
-  font-family: system-ui;
+.whygoSolar,
+.whysTextImg {
+  padding: 2rem 0;
 }
 
+/*================== about us  ====================*/
 #aboutus {
   text-align: center;
 }
 
 #aboutus .dg-300 {
-  margin: 4vh 0;
+  margin: 4rem 0;
+}
+
+img.aboutus.fitImg {
+  box-shadow: 0.4375em 0.4375em 0.75rem 0px rgba(18, 18, 18, 0.9607843137);
+  border-radius: 1px 1.5625rem;
+  width: 80%;
+  margin: auto;
 }
 
 .aboutus,
 .-box {
-  flex: 0.5 1 250px;
+  flex: 0.5 1 15.625rem;
 }
 
 #aboutus .Conbtn {
-  padding: 10px 30px;
-  border-radius: 8px;
+  padding: 0.625rem 1.875rem;
+  border-radius: 0.5rem;
   background-color: rgba(78, 76, 85, 0.2392156863);
   color: white;
-  font-weight: 700;
+  font-weight: 500;
   margin: auto;
   display: inline-block;
   border: 0.1px solid rgba(255, 255, 255, 0.7294117647);
@@ -573,17 +595,16 @@ main .home {
 }
 
 .p {
-  font-size: 1.7rem;
-  padding: 10px 50px 0;
-  margin-bottom: 3vh;
-  text-align: center;
+  font-size: 1.4rem;
+  padding: 0.625rem 50px 0;
+  margin-bottom: 5rem;
 }
 
 .count {
   display: inline-block;
   padding: 0 1rem;
-  font-size: 1.7rem;
-  margin-right: 4px;
+  font-size: 1.45rem;
+  margin-right: 0.25rem;
   background-color: black;
 }
 
@@ -595,7 +616,7 @@ main .home {
 }
 
 .seeMore {
-  padding: 3px 7px;
+  padding: 3px 0.4375em;
   cursor: pointer;
 }
 
@@ -630,8 +651,8 @@ main .home {
 }
 
 .goupcontainer img {
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   transition: 0.2s background-color linear;
 }
@@ -651,22 +672,23 @@ main .home {
 .swipe {
   position: absolute;
   bottom: -5px;
-  font-size: 18px;
+  font-size: 1.125rem;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .aboutdivs h3 {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   width: 90%;
   margin: auto;
+  font-weight: 400;
 }
 
 .aboutus .aboutdivs img {
   width: 30%;
   height: auto;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   filter: contrast(100);
 }
 
@@ -677,7 +699,7 @@ main .home {
 }
 
 .scale {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 
 .swpr .c > p {
@@ -693,27 +715,31 @@ main .home {
 
 .swiper-slide {
   text-align: center;
-  font-size: 18px;
+  font-size: 1.125rem;
   background: #fff;
   display: grid;
   align-content: flex-start;
   color: #000000;
   height: auto;
   border-radius: 5px;
-  padding-bottom: 20px;
+  padding-bottom: 1.5625rem;
   overflow: hidden;
 }
 
 .swiper-slide h3,
 .swiper-slide p {
-  margin: 6px;
-  padding: 10px;
+  margin: 0.375rem;
+  padding: 0.625rem;
+}
+
+.swiper-slide p {
+  font-size: 1.1rem;
 }
 
 .swiper-slide img {
   display: block;
   width: 100%;
-  height: 270px;
+  height: 16.875rem;
   margin: 0;
 }
 
@@ -727,7 +753,7 @@ main .home {
 }
 
 .swiper-slide2 .dg-300 img {
-  height: 300px;
+  height: 18.75rem;
 }
 
 .swiper-slide2 .dg-300 .brightness {
@@ -735,25 +761,25 @@ main .home {
 }
 
 .swiper-slide2 .review {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   text-align: left;
   position: relative;
 }
 
 .quotes {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .swiper-slide2 .review .quotes:nth-child(1) {
   position: absolute;
-  top: -10px;
+  top: -0.625rem;
   left: -16px;
 }
 
 .swiper-slide2 .review .quotes:last-of-type {
   position: absolute;
-  bottom: -10px;
-  right: 12px;
+  bottom: -0.625rem;
+  right: 0.75rem;
 }
 
 .swiper-slide2 .reviewer {
@@ -776,12 +802,12 @@ main .home {
 
 .cover {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .contain {
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 .swiper {
@@ -791,30 +817,34 @@ main .home {
 
 .swiper-button-next:after {
   position: relative;
-  left: 10px;
+  left: 0.625rem;
 }
 
 .swiper-button-prev:after {
   position: relative;
-  left: -10px;
+  left: -0.625rem;
 }
 
 .contactus > p {
-  font-size: 1.2rem;
-}
-
-.map iframe {
-  width: var(--main-width, 400px);
+  font-size: 1.1rem;
 }
 
 .contactus:nth-child(2) .dg-300 {
   gap: 1rem;
 }
 
-.d-JA-WRAP-flex .-box {
-  padding: 15px;
+.-box h3 {
+  font-weight: 500;
+}
+
+.-box .small {
+  font-size: 0.9em;
+}
+
+.d-JA-WRAP-flex .-box:not(:has(.map)) {
+  padding: 0.9375rem;
   display: grid;
-  gap: 4px;
+  gap: 0.25rem;
 }
 
 .d-JA-WRAP-flex .-box a {
@@ -823,33 +853,41 @@ main .home {
 }
 
 .d-JA-WRAP-flex .-box img {
-  max-width: 55px;
+  max-width: 3.4375rem;
   margin: auto;
 }
 
 .icon-shadow {
-  box-shadow: 0 0 42px 0px white;
+  box-shadow: 0 0 2.625rem 0px white;
 }
 
 .contactImgCon {
-  padding: 70px;
+  padding: 4.375rem;
+}
+
+.contactImgCon img {
+  box-shadow: 0.4375em 0.4375em 0.75rem 0px rgba(18, 18, 18, 0.9607843137);
+  border-radius: 3.75rem 0px;
+  display: block;
+  width: 75%;
+  margin: auto;
 }
 
 form {
   display: grid;
-  padding: 10px;
-  font-weight: 600;
+  padding: 0.625rem;
+  font-weight: 300;
 }
 
 input,
 textarea {
-  border-radius: 6px;
-  padding: 10px;
+  border-radius: 0.375rem;
+  padding: 0.625rem;
   border: 1px solid gainsboro;
   outline: none;
   transition: all 0.3s linear;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 0.875rem;
+  font-weight: 400;
 }
 
 input[type=submit] {
@@ -865,7 +903,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 :is(input, textarea):hover {
-  box-shadow: 1px 2px 5px 2px rgb(0, 0, 0);
+  box-shadow: 1px 2px 5px 0px rgb(34, 34, 34);
 }
 
 :is(input, textarea)::-moz-placeholder {
@@ -878,7 +916,7 @@ input[type=number]::-webkit-inner-spin-button {
   color: transparent;
   background-image: linear-gradient(90deg, #7780ad -9%, #000000 20%);
   -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
 }
 
 .error {
@@ -902,7 +940,7 @@ textarea {
 }
 
 .links {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .usefullinks .d-JA-WRAP-flex {
@@ -912,17 +950,20 @@ textarea {
 .usefullinks a {
   text-align: center;
   color: white;
-  flex: 1 0 150px;
+  flex: 1 0 9.375rem;
+  font-size: 0.9rem;
 }
 
 footer h4 {
   margin-top: 2rem;
   font-size: 1rem;
-  padding: 25px 30px;
+  padding: 1.5625rem 1.875rem;
   text-align: center;
-  text-transform: uppercase;
+  text-transform: capitalize;
   background-color: black;
   color: rgba(255, 255, 255, 0.9098039216);
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
 /*================ copy to clipboard ================*/
@@ -931,39 +972,26 @@ footer h4 {
   bottom: 10%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(128, 128, 128, 0.5803921569);
-  color: var(--theme-text-color, #ffffff);
+  background: linear-gradient(132deg, #7780ad -13%, #000000, black);
+  color: #ffffff;
   display: none;
-  padding: 8px 12px;
-  font-size: 17px;
-  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
   z-index: 5;
-  -webkit-backdrop-filter: blur(15px);
-          backdrop-filter: blur(15px);
 }
 
 /*=========== responsive ============*/
-@media screen and (width > 1000px) {
-  .whygo {
-    flex: 0.3 1 250px;
-  }
-}
 @media screen and (max-width: 1001px) {
   main,
   nav {
     min-width: 90%;
   }
   .contactImgCon {
-    padding: 55px;
+    padding: 3.4375rem;
   }
   .swiper-slide2 .dg-300 img {
     height: 100%;
-  }
-}
-@media screen and (min-width: 850px) {
-  nav .click,
-  .bookmarks .close {
-    display: none;
   }
 }
 @media screen and (max-width: 850px) {
@@ -977,7 +1005,7 @@ footer h4 {
     height: 100vh;
     top: var(--navheight);
     width: 50%;
-    padding: 35px 20px 45px;
+    padding: 2.1875rem 1.5625rem 45px;
     /* background: floralwhite; */
     background: linear-gradient(132deg, #7780ad -13%, #000000, black);
     display: none;
@@ -996,24 +1024,7 @@ footer h4 {
     display: block;
   }
   .contactImgCon {
-    padding: 40px;
-  }
-}
-@media screen and (min-width: 701px) {
-  .home img {
-    min-width: 100%;
-  }
-  .whygo {
-    flex: 0.4 1 250px;
-  }
-  .bookmarks {
-    text-align: center;
-  }
-  .whygoSolar {
-    padding: 10px;
-  }
-  .whysTextImg .whyTIIem:first-child {
-    min-height: 240px !important;
+    padding: 2.5rem;
   }
 }
 @media screen and (max-width: 700px) {
@@ -1028,7 +1039,8 @@ footer h4 {
     min-width: 100%;
   }
   .imgs h3 {
-    word-spacing: 2px;
+    word-spacing: 1px;
+    font-size: 1.3rem;
   }
   nav .bookmarks {
     width: 80%;
@@ -1038,12 +1050,12 @@ footer h4 {
     display: none;
   }
   .whysTextImg .whyTIIem:first-child {
-    min-height: 270px !important;
+    min-height: 16.875rem !important;
   }
 }
 @media screen and (max-width: 650px) {
   .swiper-slide2 .dg-300 img {
-    height: 300px;
+    height: 18.75rem;
   }
   .swiper-slide2 .dg-300 {
     align-items: flex-start;
@@ -1052,6 +1064,10 @@ footer h4 {
 }
 /*=================  mobile   =================*/
 @media screen and (max-width: 500px) {
+  body,
+  html {
+    font-size: 15px;
+  }
   main .home {
     height: 60vh;
   }
@@ -1061,28 +1077,75 @@ footer h4 {
   .imgs img {
     max-width: 100%;
   }
+  .headings {
+    font-size: 1.5rem;
+  }
   .whysTextImg .whyTIIem:first-child {
     min-height: 330px !important;
   }
   .aboutdivs h3 {
-    font-size: 1.4rem;
-    margin-top: 12px;
+    font-size: 1.2rem;
+    margin-top: 0.75rem;
   }
   .p {
     text-align: left;
-    font-size: 1.5rem;
-    padding: 10px 20px 0;
+    font-size: 1.25rem;
+    padding: 0.625rem 1.5625rem 0;
+  }
+  .count {
+    font-size: 1.3rem;
   }
   .contactImgCon {
-    padding: 20px;
+    padding: 1.5625rem;
   }
   .myphoto img {
-    width: var(--myphoto, 300px);
-    height: var(--myphoto, 300px);
+    width: var(--myphoto, 18.75rem);
+    height: var(--myphoto, 18.75rem);
+  }
+  .links {
+    font-size: 1rem;
   }
 }
 @media screen and (max-width: 390px) {
+  body,
+  html {
+    font-size: 14.5px;
+  }
+  .p {
+    font-size: 1.15rem;
+  }
   .whysTextImg .whyTIIem:first-child {
-    min-height: 370px !important;
+    min-height: 23.125rem !important;
+  }
+}
+@media screen and (min-width: 701px) {
+  .home img {
+    min-width: 100%;
+  }
+  .whygo {
+    flex: 0.4 1 15.625rem;
+  }
+  .bookmarks {
+    text-align: center;
+  }
+  .whygoSolar {
+    padding: 0.625rem;
+  }
+  .whysTextImg .whyTIIem:first-child {
+    min-height: 240px !important;
+  }
+  .map iframe {
+    width: var(--main-width, 25rem);
+  }
+}
+@media screen and (min-width: 850px) {
+  nav .click,
+  .bookmarks .close {
+    display: none;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .whygo {
+    flex: 0.3 1 15.625rem;
   }
 }/*# sourceMappingURL=main.css.map */
