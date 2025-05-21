@@ -1,9 +1,11 @@
-gsap.registerPlugin(ScrollTrigger)
-window.scrollTo(0, 0)
-document.body.style.overflow = 'hidden'
 // page was opening anywhere so i tried this temporarily solution
+window.scrollTo(0, 0)
+const screenSize = gsap.matchMedia();
+document.body.style.overflow = 'hidden'
 //===== gsap little animation 
 window.addEventListener('load', () => {
+    gsap.registerPlugin(ScrollTrigger)
+    ScrollTrigger.refresh();
     window.scrollTo(0, 0)
     console.log('page fully loaded')
     var tm = gsap.timeline()
@@ -12,7 +14,7 @@ window.addEventListener('load', () => {
         duration: 0.5,
         opacity: 0,
         ease: Power4,
-        onComplete: () => {document.body.style.overflow= 'hidden auto'; }
+        onComplete: () => { document.body.style.overflow = 'hidden auto'; }
     }).from('nav', {
         opacity: 0,
         duration: 0.3,
@@ -50,10 +52,13 @@ window.addEventListener('load', () => {
     }, 0)
 })
 // ======= gsap scrolltrigger 
-gsap.from('.white', {
+gsap.fromTo('.white', {
     scale: 0.3,
     opacity: 0,
-    duration: 0.7,
+}, {
+    scale: 1,
+    opacity: 1,
+    // duration: 0.7,
     scrollTrigger: {
         trigger: '.white',
         scroller: 'body',
@@ -62,31 +67,38 @@ gsap.from('.white', {
         scrub: 2,
     }
 })
-gsap.from('.p', {
-    x: '-10%',
-    // duration: 0.7,
+gsap.fromTo('.p',
+    { y: 100, opacity: 0, }, {
+    y: 0,
+    opacity: 1,
+    duration: 1.2, ease: "power3.inOut",
     scrollTrigger: {
         trigger: '.p',
-        scroller: 'body',
-        start: 'top 90%',
-        end: 'top 50%',
-        scrub: 2,
-        webkitFilter: "blur" + 2 + "px)"
+        // scroller: 'body',
+        start: 'top 97%',
+        end: 'top 97%',
+        toggleActions: "play none none reverse"
     }
 })
-gsap.from('.about img', {
-    opacity: 0,
-    scrollTrigger: {
-        trigger: '.about img',
-        scroller: 'body',
-        start: 'top 70%',
-        end: 'top 40%',
-        scrub: 2,
-        // markers:true
-    }
+gsap.utils.toArray('.about img').forEach((element) => {
+    gsap.fromTo(element, {
+        opacity: 0
+    }, {
+        opacity: 1,
+        scrollTrigger: {
+            trigger: element,
+            scroller: 'body',
+            start: 'top 70%',
+            end: 'top 50%',
+            scrub: 2,
+            // markers: true
+        }
+    })
 })
-gsap.from('.swiper-slide', {
-    opacity: 0,
+gsap.fromTo('.swiper-slide', {
+    opacity: 0
+}, {
+    opacity: 1,
     ease: 'power1',
     duration: 0.5,
     // stagger: 1,
@@ -99,35 +111,57 @@ gsap.from('.swiper-slide', {
         scrub: 4,
     }
 })
-gsap.fromTo('.mySwiper2', {
-    width: '70%',
-    ease: 'none',
-}, {
-    width: '100%',
-    scrollTrigger: {
-        trigger: '#pastProjects',
-        scroller: 'body',
-        start: 'top 80%',
-        end: 'top 20%',
-        scrub: 1,
-        // markers:true
+
+screenSize.add("(min-width: 641px)", () => {
+    gsap.fromTo('.mySwiper2', {
+        width: '70%',
+        ease: 'none',
+    }, {
+        width: '100%',
+        scrollTrigger: {
+            trigger: '#pastProjects',
+            scroller: 'body',
+            start: 'top 80%',
+            end: 'top 40%',
+            scrub: 1,
+            // markers:true
+        }
     }
-}
-)
-gsap.from('.-box', {
-    opacity: 0,
-    ease: 'power1',
-    duration: 0.4,
-    stagger: 0.3,
-    scrollTrigger: {
-        trigger: '.-box',
-        scroller: 'body',
-        start: 'top 80%',
-        end: 'top 40%',
-        scrub: 2,
+    )
+})
+screenSize.add("(max-width: 640px)", () => {
+    gsap.fromTo('.mySwiper2', {
+        width: '70%',
+        ease: 'none',
+    }, {
+        width: '95%',
+        scrollTrigger: {
+            trigger: '#pastProjects',
+            scroller: 'body',
+            start: 'top 80%',
+            end: 'top 40%',
+            scrub: 1,
+            // markers:true
+        }
     }
+    )
 })
 
+gsap.utils.toArray('.-box').forEach((element) => {   
+    gsap.fromTo(element, {
+        opacity: 0
+    }, {
+        opacity: 1,
+        ease: 'power1',
+        scrollTrigger: {
+            trigger: element,
+            scroller: 'body',
+            start: 'top 80%',
+            end: 'top 65%',
+            scrub: 2,
+        }
+    })
+})
 
 //========= moving btn 
 gsap.to('.Conbtn,.contactImgCon img', {
@@ -142,7 +176,7 @@ gsap.utils.toArray('.writing').forEach(element => {
     ScrollTrigger.create({
         trigger: element,
         toggleClass: 'writingon',
-        toggleAction: 'play play play play'
+        toggleActions: 'play none none reverse'
         // start:'center center'
     })
 });
@@ -218,7 +252,8 @@ document.querySelector('.bluriff').addEventListener('click', () => {
 
 //========= navbar height and resize
 window.addEventListener('DOMContentLoaded', () => {
-    document.documentElement.style.setProperty('--navheight', document.querySelector('nav').offsetHeight + 'px')
+    console.log(document.querySelector('nav').getBoundingClientRect())
+    document.documentElement.style.setProperty('--navheight', document.querySelector('nav').getBoundingClientRect().height + 'px')
     if (document.body.offsetWidth <= '450') {
         document.documentElement.style.setProperty('--main-width', document.body.offsetWidth - 10 + 'px')
     }
@@ -226,7 +261,8 @@ window.addEventListener('DOMContentLoaded', () => {
         document.documentElement.style.setProperty('--myphoto', document.body.offsetWidth - 50 + 'px')
     }
     window.addEventListener('resize', () => {
-        document.documentElement.style.setProperty('--navheight', document.querySelector('nav').offsetHeight + 'px')
+        ScrollTrigger.refresh();
+        document.documentElement.style.setProperty('--navheight', document.querySelector('nav').getBoundingClientRect().height + 'px')
         if (document.body.offsetWidth <= '300') {
             document.documentElement.style.setProperty('--min-width', document.querySelector('nav').offsetWidth - 40 + 'px')
             document.documentElement.style.setProperty('--myphoto', document.body.offsetWidth - 50 + 'px')
@@ -247,7 +283,7 @@ window.addEventListener('DOMContentLoaded', () => {
 const seemores = document.querySelectorAll('.seeMore')
 seemores.forEach((elm) => {
     elm.addEventListener('click', (element) => {
-        console.log(element.target.previousElementSibling)
+        ScrollTrigger.refresh();        
         if (element.target.previousElementSibling.classList.contains('free')) {
             element.target.innerText = 'See Less...'
             element.target.previousElementSibling.classList.remove('free')
@@ -261,9 +297,8 @@ seemores.forEach((elm) => {
     })
 })
 
-
 //========= swiperjs SERVICES SWIPER
-var swiper = new Swiper(".mySwiper", {
+let swiper = new Swiper(".mySwiper", {
     spaceBetween: 30,
     loop: true,
     grabCursor: true,
@@ -288,18 +323,18 @@ var swiper = new Swiper(".mySwiper", {
             effect: "fade"
         },
 
-        500: {
+        650: {
             slidesPerView: 2
         },
 
-        801: {
+        1050: {
             slidesPerView: 3
         }
     }
 });
 
 //========= PAST PROJECTS
-var swiper = new Swiper(".mySwiper2", {
+let swiper2 = new Swiper(".mySwiper2", {
     spaceBetween: 30,
     slidesPerView: 1,
     loop: true,
@@ -401,8 +436,6 @@ document.querySelector('.remove').addEventListener('click', () => {
 
 //======selfmade visionslider 
 let index = 0;
-// function rightslid() { index !== -2 ? index-- : ''; slideshow() }
-// function leftslid() { index !== 0 ? index++ : ''; slideshow() }
 function rightslid() { index--; slideshow() }
 function leftslid() { index++; slideshow() }
 
@@ -446,7 +479,7 @@ const observer3 = new IntersectionObserver(entries => {
             const typed = new Typed('.type', {
                 strings: ["By installing solar power plant on your roof top, you'll enjoy reduced electricity bills, and free energy. Say goodbye to unpredictable energy costs and hello to long-term savings. Plus, you'll be reducing your carbon footprint, contributing to cleaner air and a healthier environment for generations to come. Join the solar revolution today and power your home or business with clean, renewable energy. Your brighter tomorrow starts with solar today join the solar revolution !"],
                 startDelay: 100,
-                typeSpeed: 5,
+                typeSpeed: 1,
                 autoInsertCss: true,
                 loop: false
             });
@@ -501,7 +534,7 @@ const observer2 = new IntersectionObserver(entries => {
                         count.innerText = 365 + '+';
                         clearInterval(interval)
                     }
-                }, 10)
+                }, 5)
             }
         }
     })
